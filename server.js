@@ -1,15 +1,11 @@
-console.log('may node be with you');
-console.log('woo');
+const mongoose = require('mongoose');
 
-const express = require('express');
-const bodyParser = require('body-parser');
-const mongodb = require('mongodb');
+const mongoDb = 'mongodb://dev:waBaby1!@ds263317.mlab.com:63317/heroku_n61mbsk0';
 
-const APIS_COLLECTION = 'contacts';
-
-const app = express();
-app.use(bodyParser.json());
-
-app.listen(3000, () => {
-  console.log('listenting on 300');
+mongoose.connect(mongoDb, {
+  useMongoClient: true,
 });
+
+mongoose.Promise = global.Promise;
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
