@@ -1,14 +1,15 @@
 const express = require('express'); // Express JS Framework
 const mongoose = require('mongoose'); // mongoose ORM
-const localConfig = require('./local-config.json'); // local-config file
-const baseRoute = require('./server/routes/base.route'); // api routes file
+const fs = require('fs'); // file stream
+const indexRoute = require('./server/routes/index.route'); // api index routes file
 
 let dbUrl = '';
 
-try {
-  dbUrl = localConfig.dbUrl;
-  console.log('Using local-config file');
-} catch (error) {
+if (fs.existsSync('./local-config.json')) {
+  const rawData = fs.readFileSync('./local-config.json');
+  dbUrl = JSON.parse(rawData).dbUrl;
+  console.log('Using local-config.json');
+} else {
   dbUrl = process.env.MONGODB_URI;
 }
 
@@ -22,7 +23,7 @@ const db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
-app.use('/api/v1.0', baseRoute);
+app.use('/api/v1.0', indexRoute);
 
 app.listen(port, () => {
   console.log(`Running the server on port ${port}`);
