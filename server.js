@@ -16,7 +16,6 @@ if (fs.existsSync('./local-config.json')) {
 mongoose.connect(dbUrl);
 
 const app = express();
-const port = process.env.port || 8080;
 
 mongoose.Promise = global.Promise;
 const db = mongoose.connection;
@@ -25,6 +24,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 app.use('/api/v1.0', indexRoute);
 
-app.listen(port, () => {
-  console.log(`Running the server on port ${port}`);
+const server = app.listen(process.env.PORT || 8080, () => {
+  const port = server.address().port;
+  console.log('App now running on port', port);
 });
