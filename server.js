@@ -1,9 +1,12 @@
 const express = require('express'); // Express JS Framework
 const mongoose = require('mongoose'); // mongoose ORM
+const bodyParser = require('body-parser');
 const fs = require('fs'); // file stream
 const indexRoute = require('./server/routes/index.route'); // api index routes file
 
 const app = express();
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use('/api/v1.0', indexRoute); // default route to read index routes
 
 let dbUrl = '';

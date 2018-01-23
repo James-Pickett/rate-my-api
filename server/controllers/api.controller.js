@@ -1,5 +1,24 @@
-const Api = require('../models/api');
+const mongoose = require('../models/api');
 
-exports.get = function (req, res) {
-  res.send('api get');
+const Api = mongoose.model('Apis');
+
+exports.list = (req, res) => {
+  Api.find({}, (err, task) => {
+    if (err) {
+      res.send(err);
+    } else {
+      res.json(task);
+    }
+  });
+};
+
+exports.create = (req, res) => {
+  const newApi = new Api(req.body);
+  newApi.save((err, api) => {
+    if (err) {
+      res.send(err);
+    } else {
+      res.json(api);
+    }
+  });
 };

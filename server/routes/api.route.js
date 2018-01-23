@@ -3,6 +3,9 @@ const apiController = require('../controllers/api.controller');
 
 const router = express.Router();
 
-router.get('/', apiController.get);
+router.route('/')
+  .get(apiController.list)
+  .post(apiController.list);
+
 
 module.exports = router;

@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
-Schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
-const ApiSchema = Schema({
-  name: { type: String, required: true, max: 100 },
+const ApiSchema = new Schema({
+  name: { type: String, required: 'Please provide a name for the API', max: 100 },
 });
 
-module.exports = mongoose.model('Api', ApiSchema);
+module.exports = mongoose.model('Apis', ApiSchema);
