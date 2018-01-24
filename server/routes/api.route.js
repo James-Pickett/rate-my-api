@@ -5,7 +5,11 @@ const router = express.Router();
 
 router.route('/')
   .get(apiController.list)
-  .post(apiController.list);
+  .post(apiController.create);
 
+router.route('/:id')
+  .get(apiController.get)
+  .put(apiController.update)
+  .delete(apiController.delete);
 
 module.exports = router;

@@ -7,7 +7,7 @@ const indexRoute = require('./server/routes/index.route'); // api index routes f
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use('/api/v1.0', indexRoute); // default route to read index routes
+app.use('/api/v1', indexRoute); // default route to read index routes
 
 let dbUrl = '';
 
