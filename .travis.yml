@@ -8,7 +8,7 @@ install:
 notifications:
   email:
     recipients:
-      - $ownerEmail
+      - secure: ownerEmail
   on_success: always
   on_failure: always
 
