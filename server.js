@@ -11,6 +11,7 @@ app.use('/api/v1', indexRoute); // default route to read index routes
 
 let dbUrl = '';
 
+// adding a commnet here to trigger a build
 // use local config file if it exists
 if (fs.existsSync('./local-config.json')) {
   const rawData = fs.readFileSync('./local-config.json');
