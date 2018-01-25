@@ -9,6 +9,8 @@ notifications:
   email:
     recipients:
       - $ownerEmail
+  on_success: always
+  on_failure: always
 
 script:
   - npm run lint
