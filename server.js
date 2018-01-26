@@ -2,7 +2,7 @@ const express = require('express'); // Express JS Framework
 const mongoose = require('mongoose'); // mongoose ORM
 const bodyParser = require('body-parser');
 const fs = require('fs'); // file stream
-const indexRoute = require('./server/routes/index.route'); // api index routes file
+const indexRoute = require('./api/index.route'); // api index routes file
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
