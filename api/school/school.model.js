@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const ApiSchema = new Schema({
+const SchoolSchema = new Schema({
   name:
   {
     type: String,
@@ -12,4 +12,4 @@ const ApiSchema = new Schema({
   },
 });
 
-module.exports = mongoose.model('Apis', ApiSchema);
+module.exports = mongoose.model('Schools', SchoolSchema);

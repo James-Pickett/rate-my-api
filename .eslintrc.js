@@ -1,7 +1,7 @@
 module.exports = {
-    "extends": "airbnb",
+    "extends": "airbnb-base",
     "rules": {
-        "linebreak-style": ["error", "windows"],
+        "linebreak-style": 0,
         "no-underscore-dangle": ["error", { "allowAfterThis": true }],
         "prefer-destructuring": 0
     }
