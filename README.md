@@ -1,1 +1,3 @@
-# rate-my-api
+# Learning node by making an api
+
+// TODO: make pretty readme

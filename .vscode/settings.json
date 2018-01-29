@@ -1,0 +1,5 @@
+{  // Always show the ESlint status bar item.
+  "eslint.alwaysShowStatus": true,
+  "eslint.autoFixOnSave": true,
+  "editor.tabSize": 2,
+}
