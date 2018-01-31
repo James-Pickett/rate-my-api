@@ -48,7 +48,7 @@ exports.delete = (req, res) => {
     if (err) {
       res.send(err);
     } else {
-      res.json({ message: `${school.name} API successfully deleted` });
+      res.json({ message: `${school.name} successfully deleted` });
     }
   });
 };
