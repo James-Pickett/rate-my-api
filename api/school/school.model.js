@@ -10,6 +10,22 @@ const SchoolSchema = new Schema({
     max: 100,
     min: 3,
   },
+  createdDate:
+  {
+    type: Date,
+    required: true,
+    default: Date.now,
+  },
+}, {
+  versionKey: false,
+});
+
+SchoolSchema.pre('save', (next) => {
+  const now = new Date();
+  if (!this.createdDate) {
+    this.createdDate = now;
+  }
+  next();
 });
 
 module.exports = mongoose.model('Schools', SchoolSchema);
