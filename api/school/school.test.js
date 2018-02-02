@@ -1,9 +1,9 @@
 process.env.NODE_ENV = 'test'; // test env to test
 
-const School = require('../api/school/school.model');
+const School = require('./school.model');
 const chai = require('chai');
 const chaiHttp = require('chai-http');
-const server = require('../server');
+const server = require('../../server.js');
 
 chai.should();
 chai.use(chaiHttp);
@@ -15,7 +15,7 @@ describe('Schools', () => {
     });
   });
 
-  describe('/GET school', () => {
+  describe('/GET schools', () => {
     it('it should GET all the schools', (done) => {
       chai.request(server)
         .get('/api/v1/schools')
