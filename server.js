@@ -3,7 +3,7 @@ const mongoose = require('mongoose'); // mongoose ORM
 const bodyParser = require('body-parser'); // json body-parser
 const fs = require('fs'); // file stream
 const indexRoute = require('./api/index.route'); // api index routes file
-const morgan = require('morgan');
+const morgan = require('morgan'); // some logging thing?
 const config = require('config');
 
 const app = express();

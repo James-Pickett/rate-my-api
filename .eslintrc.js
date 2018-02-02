@@ -4,5 +4,9 @@ module.exports = {
         "linebreak-style": 0,
         "no-underscore-dangle": ["error", { "allowAfterThis": true }],
         "prefer-destructuring": 0
+    },
+    "env": {
+        "node": true,
+        "mocha": true
     }
 };
