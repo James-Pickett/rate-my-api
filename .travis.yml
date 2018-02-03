@@ -14,5 +14,6 @@ notifications:
   on_failure: always
 
 script:
-  - secure: runUnitTests
+  - npm run test -- --dbHost
+    - secure: unitTestDbHost
   - npm run lint  
