@@ -6,14 +6,16 @@ node_js:
 install:
   - npm install
 
+secure: ownerEmail
+secure: unitTestDbHost
+
 notifications:
   email:
     recipients:
-      - secure: ownerEmail
+      - ownerEmail
   on_success: always
   on_failure: always
 
 script:
-  - npm run test -- --dbHost
-    - secure: unitTestDbHost
-  - npm run lint  
+  - npm run lint
+  - npm run test -- --dbHost unitTestDbHost
