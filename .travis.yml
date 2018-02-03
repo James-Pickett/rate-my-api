@@ -14,5 +14,4 @@ notifications:
   on_failure: always
 
 script:
-  - secure: unitTestScript
   - npm run lint  
