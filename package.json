@@ -5,15 +5,15 @@
   "scripts": {
     "start": "nodemon server.js",
     "lint": "eslint **/*.js",
-    "test": "mocha api/**/*.test.js --timeout 10000"
+    "test": "mocha api/**/*.test.js"
   },
   "private": true,
   "dependencies": {
     "body-parser": "^1.18.2",
     "config": "^1.29.2",
     "express": "^4.16.2",
-    "mongoose": "^5.0.1",
-    "morgan": "^1.9.0"
+    "minimist": "^1.2.0",
+    "mongoose": "^5.0.1"
   },
   "devDependencies": {
     "@types/node": "^9.3.0",
