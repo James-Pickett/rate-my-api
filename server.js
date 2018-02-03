@@ -40,4 +40,4 @@ const server = app.listen(process.env.PORT || 8080, () => {
   console.log('App now running on port', port);
 });
 
-module.exports = app; // for testing
+module.exports = server; // for testing
