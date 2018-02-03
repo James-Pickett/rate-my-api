@@ -6,7 +6,8 @@ install: npm install
 
 notifications:
   email:
-    recipients: $ownerEmail
+    recipients: 
+      - $ownerEmail
   on_success: always
   on_failure: always
 
