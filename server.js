@@ -6,12 +6,14 @@ const indexRoute = require('./api/index.route'); // api index routes file
 const config = require('config');
 const argv = require('minimist')(process.argv.slice(2));
 
+const baseUrl = '/api/v1';
+
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(bodyParser.json({ type: 'application/json' }));
 app.use(bodyParser.text());
-app.use('/api/v1', indexRoute); // default route to read index routes
+app.use(baseUrl, indexRoute); // default route to read index routes
 
 let dbHost = '';
 
@@ -41,3 +43,4 @@ const server = app.listen(process.env.PORT || 8080, () => {
 });
 
 module.exports = server; // for testing
+module.exports.baseUrl = baseUrl;
