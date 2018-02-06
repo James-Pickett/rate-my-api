@@ -44,11 +44,11 @@ exports.update = (req, res) => {
 };
 
 exports.delete = (req, res) => {
-  School.remove({ _id: req.params.id }, (err, school) => {
+  School.remove({ _id: req.params.id }, (err) => {
     if (err) {
       res.send(err);
     } else {
-      res.json({ message: `${school.name} successfully deleted` });
+      res.json({ message: 'School successfully deleted' });
     }
   });
 };
