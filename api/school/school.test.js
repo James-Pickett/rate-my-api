@@ -36,7 +36,7 @@ describe(`School API Routes ${server.baseUrl}`, () => {
         .post(`${server.baseUrl}/schools`)
         .send(school)
         .end((err, res) => {
-          res.should.have.a.status(200);
+          res.should.have.a.status(201);
           res.body.should.have.property('name').eql(schoolName);
           done();
         });
@@ -87,7 +87,7 @@ describe(`School API Routes ${server.baseUrl}`, () => {
         chai.request(server)
           .delete(`${server.baseUrl}/schools/${school.id}`)
           .end((err, res) => {
-            res.should.have.a.status(200);
+            res.should.have.a.status(204);
             done();
           });
       });

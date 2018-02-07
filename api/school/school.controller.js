@@ -18,7 +18,7 @@ exports.create = (req, res) => {
     if (err) {
       res.send(err);
     } else {
-      res.json(school);
+      res.status(201).json(school);
     }
   });
 };
@@ -27,6 +27,8 @@ exports.get = (req, res) => {
   School.findById(req.params.id, (err, school) => {
     if (err) {
       res.send(err);
+    } else if (school === null) {
+      res.status(404).json({ message: 'No school found' });
     } else {
       res.json(school);
     }
@@ -48,7 +50,7 @@ exports.delete = (req, res) => {
     if (err) {
       res.send(err);
     } else {
-      res.json({ message: 'School successfully deleted' });
+      res.status(204).json({ message: 'School successfully deleted' });
     }
   });
 };
