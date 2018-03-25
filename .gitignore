@@ -43,3 +43,5 @@ testem.log
 Thumbs.db
 /local.config.js
 /local-config.json
+/config/local-config.json
+/config

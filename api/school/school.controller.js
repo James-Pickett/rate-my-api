@@ -18,7 +18,7 @@ exports.create = (req, res) => {
     if (err) {
       res.send(err);
     } else {
-      res.json(school);
+      res.status(201).json(school);
     }
   });
 };
@@ -27,6 +27,8 @@ exports.get = (req, res) => {
   School.findById(req.params.id, (err, school) => {
     if (err) {
       res.send(err);
+    } else if (school === null) {
+      res.status(404).json({ message: 'No school found' });
     } else {
       res.json(school);
     }
@@ -44,11 +46,11 @@ exports.update = (req, res) => {
 };
 
 exports.delete = (req, res) => {
-  School.remove({ _id: req.params.id }, (err, school) => {
+  School.remove({ _id: req.params.id }, (err) => {
     if (err) {
       res.send(err);
     } else {
-      res.json({ message: `${school.name} API successfully deleted` });
+      res.status(204).json({ message: 'School successfully deleted' });
     }
   });
 };

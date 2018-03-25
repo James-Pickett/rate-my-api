@@ -1,17 +1,16 @@
 language: node_js
 
-node_js:
-  - "9"
+node_js: "9"
 
-install:
-  - npm install
+install: npm install
 
 notifications:
   email:
-    recipients:
-      - secure: ownerEmail
+    recipients: 
+      - secure: $ownerEmail
   on_success: always
   on_failure: always
 
 script:
+  - npm test -- --dbHost $unitTestDbHost
   - npm run lint
